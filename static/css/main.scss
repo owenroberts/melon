@@ -1,0 +1,29 @@
+body {
+	font-family: Verdana;
+	font-size: 14px;
+	background: lightblue;
+}
+
+#container {
+	max-width: 640px;
+	padding: 1em;
+	margin: 0 auto;
+	background: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.permalink {
+	font-size: 0.75em;
+	margin-left: 0.5em;
+}
+
+.post {
+	margin: 1em 0;
+}

@@ -1,0 +1,18 @@
+<!-- likes -->
+{% extends "layout.html" %}
+{% block content %}
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+	const id = '{{ postId }}';
+	window.addEventListener('load', () => {
+		firebase.database().ref('posts').child(id)
+			.on('value', Cool.createPost);
+	});
+</script>
+
+{% endblock %}

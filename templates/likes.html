@@ -1,0 +1,34 @@
+<!-- likes -->
+{% extends "layout.html" %}
+{% block content %}
+<h2>Likes</h2>
+<div id="likes"></div>
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+	const id = '{{ postId }}';
+	const likesDiv = document.getElementById('likes');
+	window.addEventListener('load', () => {
+		firebase.database().ref('posts').child(id)
+			.on('value', postData => {
+				
+				Cool.createPost(postData);
+				const likes = postData.val().likes;
+				
+				for (const userId in likes) {
+					firebase.database().ref('users').child(userId)
+						.once('value', userData => {
+							const user = Cool.createEl('div', ['user'], likesDiv);
+							const userLink = Cool.createEl('a', ['user-link'], user, userData.val().name.replace(/-|_/g, ' '));
+							userLink.href = `/user/${userId}`;
+						});
+				}
+			});
+	});
+
+
+</script>
+
+{% endblock %}

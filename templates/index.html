@@ -1,0 +1,17 @@
+<!-- index -->
+{% extends "layout.html" %}
+{% block header %}
+<button id="add-user">Add User</button>
+<button id="sim">Simulate</button>
+{% endblock %}
+
+{% block scripts %}
+<script>
+	window.addEventListener('load', () => {
+		firebase.database().ref('posts')
+			.on('child_added', Cool.createPost);
+	});
+</script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/user.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/sim.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- index -->
+{% extends "layout.html" %}
+{% block content %}
+
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+	const id = '{{ userId }}';
+	window.addEventListener('load', () => {
+		firebase.database().ref('posts').orderByChild('user').equalTo(id)
+			.on('child_added', Cool.createPost);
+	});
+</script>
+
+{% endblock %}
