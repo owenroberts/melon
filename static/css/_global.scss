@@ -1,0 +1,42 @@
+
+body {
+	font-family: $text-font;
+	font-size: 14px;
+	background: lightblue;
+	margin: 0;
+}
+
+h1,
+h1 a {
+	color: black;
+	font-family: $header-font;
+	font-size: 2em;
+}
+
+h2 {
+	font-family: $meta-font;
+}
+
+#container {
+	max-width: 640px;
+	padding: 1em;
+	margin: 0 auto;
+	background: white;
+}
+
+button {
+	font-family: $meta-font;
+}
+
+a {
+	font-family: $meta-font;
+	text-decoration: none;
+	color: blue;
+	&:hover {
+		text-decoration: underline;
+	}
+	&.permalink {
+		font-size: 0.75em;
+		margin-left: 0.5em;
+	}
+}

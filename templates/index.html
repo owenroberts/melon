@@ -10,6 +10,13 @@
 	window.addEventListener('load', () => {
 		firebase.database().ref('posts')
 			.on('child_added', Cool.createPost);
+
+		firebase.database().ref('posts')
+			.on('child_changed', snapshot => {
+				// console.log(snapshot.key, snapshot.val());
+				const post = document.getElementById(snapshot.key);
+				console.log(post);
+			});
 	});
 </script>
 <script type="text/javascript" src="{{ url_for('static',filename='js/user.js') }}"></script>

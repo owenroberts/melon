@@ -9,9 +9,6 @@ assets.url = app.static_url_path
 scss = Bundle('css/main.scss', filters='scss', depends=('**/*.scss'), output='css/style.css')
 assets.register('scss', scss)
 
-# js = Bundle('js/cool.js', filters='jsmin', depends=('**/*.js'), output="js/app.min.js")
-# assets.register('js', js)
-
 bug = True
 
 @app.route('/')

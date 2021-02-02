@@ -1,7 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap");
 body {
-  font-family: Verdana;
+  font-family: "Amiri";
   font-size: 14px;
   background: lightblue;
+  margin: 0;
+}
+
+h1,
+h1 a {
+  color: black;
+  font-family: "Pirata One";
+  font-size: 2em;
+}
+
+h2 {
+  font-family: "JetBrains Mono";
 }
 
 #container {
@@ -11,14 +26,18 @@ body {
   background: white;
 }
 
-a {
-  text-decoration: none;
+button {
+  font-family: "JetBrains Mono";
 }
 
+a {
+  font-family: "JetBrains Mono";
+  text-decoration: none;
+  color: blue;
+}
 a:hover {
   text-decoration: underline;
 }
-
 a.permalink {
   font-size: 0.75em;
   margin-left: 0.5em;
@@ -26,4 +45,34 @@ a.permalink {
 
 .post {
   margin: 1em 0;
+}
+.post .user-link {
+  color: black;
+  font-weight: bold;
+}
+.post .text {
+  font-size: 1.6em;
+  margin: 0;
+  line-height: 1.4;
+}
+.post .permalink {
+  color: gray;
+}
+.post .likes {
+  padding: 0.5em 0.25em;
+  border-radius: 0.25em;
+  line-height: 1em;
+  display: inline-flex;
+  align-items: baseline;
+  font-size: 0.8em;
+}
+.post .likes:hover {
+  background: lightgray;
+  text-decoration: none;
+}
+.post .likes .like-icon {
+  font-size: 2em;
+}
+.post .likes .like-num {
+  font-size: 1.25em;
 }

@@ -1,29 +1,11 @@
-body {
-	font-family: Verdana;
-	font-size: 14px;
-	background: lightblue;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
 
-#container {
-	max-width: 640px;
-	padding: 1em;
-	margin: 0 auto;
-	background: white;
-}
+$header-font: 'Pirata One';
+$text-font: 'Amiri';
+$meta-font: 'JetBrains Mono';
 
-a {
-	text-decoration: none;
-}
+@import 'global';
+@import 'post';
 
-a:hover {
-	text-decoration: underline;
-}
-
-a.permalink {
-	font-size: 0.75em;
-	margin-left: 0.5em;
-}
-
-.post {
-	margin: 1em 0;
-}
