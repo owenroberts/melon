@@ -14,7 +14,6 @@ window.addEventListener('load', () => {
 			const permalink = Cool.createEl('a', ['permalink'], user, Cool.formatDate(postData.val().date));
 			permalink.href = `/post/${postData.key}`;
 
-			
 
 			Cool.createEl('p', ['text'], post, postData.val().text);
 		});

@@ -1,5 +1,6 @@
 .post {
 	margin: 1em 0;
+	margin-bottom: 1.5em;
 
 	.user-link {
 		color: black;
@@ -16,21 +17,18 @@
 		color: gray;
 	}
 
-	.likes {
+	.likes, .replies {
 		padding: 0.5em 0.25em;
 		border-radius: 0.25em;
     	line-height: 1em;
     	display: inline-flex;
     	align-items: baseline;
     	font-size: 0.8em;
-		&:hover {
-			background: lightgray;
-			text-decoration: none;
-		}
-		.like-icon {
+		
+		.icon {
 			font-size: 2em;
 		}
-		.like-num {
+		.num {
 			font-size: 1.25em;
 		}
 	}

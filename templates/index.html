@@ -8,14 +8,15 @@
 {% block scripts %}
 <script>
 	window.addEventListener('load', () => {
-		firebase.database().ref('posts')
+		firebase.database().ref('posts').orderByChild('replyTo').equalTo(null)
 			.on('child_added', Cool.createPost);
 
-		firebase.database().ref('posts')
-			.on('child_changed', snapshot => {
-				// console.log(snapshot.key, snapshot.val());
-				const post = document.getElementById(snapshot.key);
-				console.log(post);
+		firebase.database().ref('posts').orderByChild('replyTo').equalTo(null)
+			.on('child_changed', postData => {
+				
+				document.getElementById(`like-num-${postData.key}`).textContent = postData.val().likes ? Object.keys(postData.val().likes).length : '0';
+
+				document.getElementById(`reply-num-${postData.key}`).textContent = postData.val().replies ? Object.keys(postData.val().replies).length : '0';
 			});
 	});
 </script>

@@ -24,19 +24,28 @@ h2 {
   padding: 1em;
   margin: 0 auto;
   background: white;
+  position: relative;
+  left: 1em;
 }
 
 button {
   font-family: "JetBrains Mono";
+  cursor: pointer;
 }
 
 a {
   font-family: "JetBrains Mono";
   text-decoration: none;
   color: blue;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: all 200ms;
+  border-radius: 0.5em;
 }
 a:hover {
-  text-decoration: underline;
+  box-shadow: 0 0.25em 0.25em lightblue;
+  top: -2px;
 }
 a.permalink {
   font-size: 0.75em;
@@ -45,6 +54,7 @@ a.permalink {
 
 .post {
   margin: 1em 0;
+  margin-bottom: 1.5em;
 }
 .post .user-link {
   color: black;
@@ -58,7 +68,7 @@ a.permalink {
 .post .permalink {
   color: gray;
 }
-.post .likes {
+.post .likes, .post .replies {
   padding: 0.5em 0.25em;
   border-radius: 0.25em;
   line-height: 1em;
@@ -66,13 +76,9 @@ a.permalink {
   align-items: baseline;
   font-size: 0.8em;
 }
-.post .likes:hover {
-  background: lightgray;
-  text-decoration: none;
-}
-.post .likes .like-icon {
+.post .likes .icon, .post .replies .icon {
   font-size: 2em;
 }
-.post .likes .like-num {
+.post .likes .num, .post .replies .num {
   font-size: 1.25em;
 }

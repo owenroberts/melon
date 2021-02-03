@@ -23,21 +23,21 @@ def get_post():
 @app.route('/get_user_name')
 def get_user_name():
 	from random import choice
-	from nltk.corpus import wordnet as wn
 
+	words = {}
+	words['n'] = open('text/nouns.txt').read().splitlines()
+	words['a'] = open('text/adjectives.txt').read().splitlines()
 	bad_words = open('text/badwords.txt').read().splitlines()
 
 	def get_random_word(pos):
-		words = list( wn.all_synsets( pos) )
-		word = choice( words ).name().split('.')[0]
+		word = choice( words[pos] )
 		if word in bad_words:
-			print( word ) # wanna check if this happens ...
-		while word in bad_words:
-			word = choice( words ).name().split('.')[0]
+			print( word ) # wanna check when this happens ...
+			word = choice( words[pos] )
 		return word
 
 	# adjective + noun
-	return jsonify({ "name": get_random_word( 's' ) + '-' + get_random_word( 'n' ) });
+	return jsonify({ "name": get_random_word( 'a' ) + '-' + get_random_word( 'n' ) });
 
 
 @app.route('/post/<id>')
@@ -58,3 +58,4 @@ if __name__ == '__main__':
 
 # libs
 # https://github.com/dariusk/wordfilter
+# made my own word lists using wordnet

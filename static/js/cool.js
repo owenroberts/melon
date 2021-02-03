@@ -29,14 +29,20 @@ Cool.createPost = function(postData) {
 
 	Cool.createEl('p', ['text'], post, postData.val().text);
 
-	if (postData.val().likes) {
-		const n = Object.keys(postData.val().likes).length;
-		const likes = Cool.createEl('a', ['likes'], post);
-		likes.title = 'View user likes';
-		Cool.createEl('span', ['like-icon'], likes, '❦');
-		Cool.createEl('span', ['like-num'], likes, n);
-		likes.href = `/likes/${postData.key}`;
-	}
+	const likes = Cool.createEl('a', ['likes'], post);
+	likes.title = 'View user likes';
+	Cool.createEl('span', ['icon'], likes, '❦');
+	const likeNum = Cool.createEl('span', ['num'], likes, postData.val().likes ? Object.keys(postData.val().likes).length : '0');
+	likeNum.id = `like-num-${postData.key}`;
+	likes.href = `/likes/${postData.key}`;
+
+	const replies = Cool.createEl('a', ['replies'], post);
+	replies.title = 'View user replies';
+	Cool.createEl('span', ['icon'], replies, '↩');
+	const replyNum = Cool.createEl('span', ['num'], replies, postData.val().replies ? Object.keys(postData.val().replies).length : '0');
+	replyNum.id = `reply-num-${postData.key}`;
+	console.log(replyNum);
+	replies.href = `/replies/${postData.key}`;
 	
 };
 
